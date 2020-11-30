@@ -9,7 +9,7 @@ export class GreetingService {
   private greetingsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.greetingsUrl = 'http://localhost:8080/greetings';
+    this.greetingsUrl = 'https://pfe-spring-angular.herokuapp.com/greetings';
   }
 
   public findAll(): Observable<Greeting[]> {
