@@ -11,9 +11,4 @@ export class CitizenAuthComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  aaaaa(): void {
-    alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-  }
-
 }
