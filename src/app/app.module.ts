@@ -9,12 +9,14 @@ import { GreetingFormComponent } from './greeting-form/greeting-form.component';
 import { GreetingService } from '../services/greeting-service.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CitizenAuthComponent } from './citizen-auth/citizen-auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GreetingsListComponent,
-    GreetingFormComponent
+    GreetingFormComponent,
+    CitizenAuthComponent
   ],
   imports: [
     BrowserModule,

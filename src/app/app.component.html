@@ -4,17 +4,9 @@
       <div class="card bg-dark my-5">
         <div class="card-body">
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/greetings" class="btn btn-info">List Greetings</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/addgreeting" class="btn btn-info">Add Greeting</a>
-            </li>
-          </ul>
+          <router-outlet class="text-center"></router-outlet>
         </div>
       </div>
-      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
