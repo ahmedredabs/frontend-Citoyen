@@ -1,4 +1,5 @@
 export class Citizen {
-  id : number = -1;
-  isAlerted : boolean = false;
+  id : string = "";
+  alerted : boolean = false;
+  name : string = "";
 }

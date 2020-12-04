@@ -4,19 +4,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { GreetingsListComponent } from './greetings-list/greetings-list.component';
-import { GreetingFormComponent } from './greeting-form/greeting-form.component';
-import { GreetingService } from '../services/greeting-service.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CitizenAuthComponent } from './citizen-auth/citizen-auth.component';
+import { ApiService } from '../services/api.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GreetingsListComponent,
-    GreetingFormComponent,
-    CitizenAuthComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +19,7 @@ import { CitizenAuthComponent } from './citizen-auth/citizen-auth.component';
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [GreetingService],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
