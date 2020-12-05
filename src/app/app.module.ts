@@ -8,12 +8,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ApiService } from '../services/api.service';
 import { RegisterFormComponent } from './register-form/register-form.component';
-import {LocaldatabaseService} from 'src/services/localdatabase.service'
+import {LocaldatabaseService} from 'src/services/localdatabase.service';
+import { QrscannerComponent } from './qrscanner/qrscanner.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    QrscannerComponent
   ],
   imports: [
     BrowserModule,

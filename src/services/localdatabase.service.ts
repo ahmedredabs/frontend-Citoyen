@@ -6,6 +6,7 @@ import {Citizen} from '../model/citizen';
 export class LocaldatabaseService {
 
   private db : any;
+  private citizen : Citizen
 
   constructor() {
     this.db = new Dexie('citizen-db');
@@ -13,13 +14,12 @@ export class LocaldatabaseService {
     this.db.version(1).stores({
         citizen: "id, alerted, name"
     });
+    this.citizen = new Citizen()
   }
 
-  /*
-  public getCitizen() : Citizen {
-
+  public getCitizen() {
+    return this.db.citizen.toArray()
   }
-  */
 
   public saveCitizen(citizen : Citizen) {
     this.db.citizen
