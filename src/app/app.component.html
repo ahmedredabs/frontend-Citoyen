@@ -4,10 +4,11 @@
       <div class="card bg-dark my-5">
         <div class="card-body">
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <router-outlet class="text-center"></router-outlet>
         </div>
       </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
+  <!-- This part of the component is supposed to be a sort of footer -->
+  <p>UID: {{ citizen.id }} <p>
 </div>
-<h1>UID: {{ citizen.id }}<h1>

@@ -14,12 +14,16 @@ export class AppComponent implements OnInit {
   title = 'app-citoyen';
   citizen : Citizen = new Citizen();
 
-  constructor(private service : ApiService) {}
+  constructor(private service : ApiService) {
+  }
 
   ngOnInit() {
+    // We will be coming back to this later.
+    /*
     this.service.registerCitizen().subscribe(data => {
       this.citizen = data;
       console.log(data);
     });
+    */
   }
 }

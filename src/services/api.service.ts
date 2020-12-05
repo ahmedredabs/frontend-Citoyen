@@ -12,7 +12,7 @@ export class ApiService {
     this.apiUrl = environment.domain;
   }
 
-  public registerCitizen() {
-    return this.http.get<Citizen>(this.apiUrl+"/citizen/register");
+  public registerCitizen(citizen : Citizen) {
+    return this.http.post<Citizen>(this.apiUrl+"/citizen/register", citizen);
   }
 }

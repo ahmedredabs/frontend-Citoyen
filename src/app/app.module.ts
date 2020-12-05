@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ApiService } from '../services/api.service';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import {LocaldatabaseService} from 'src/services/localdatabase.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { ApiService } from '../services/api.service';
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ApiService],
+  providers: [ApiService,LocaldatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
