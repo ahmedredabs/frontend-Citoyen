@@ -9,7 +9,8 @@ import { environment } from '../environments/environment';
 import { ApiService } from '../services/api.service';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import {LocaldatabaseService} from 'src/services/localdatabase.service';
-import { QrscannerComponent } from './qrscanner/qrscanner.component'
+import { QrscannerComponent } from './qrscanner/qrscanner.component';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { QrscannerComponent } from './qrscanner/qrscanner.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ZXingScannerModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ApiService,LocaldatabaseService],
