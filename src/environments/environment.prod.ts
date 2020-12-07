@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  domain : "https://pfe-spring-angular.herokuapp.com/"
 };
