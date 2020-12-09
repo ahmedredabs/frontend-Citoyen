@@ -17,8 +17,13 @@ export class ApiService {
     return this.http.post<Citizen>(this.apiUrl+"/citizen/register", citizen);
   }
 
-  public scannerQrCode(scan : Scan) {
-    console.log(scan);
-    return this.http.post<Scan>(this.apiUrl+"/scan/scanner", scan);
+  public visitScan(scan : Scan) {
+    console.log("visitScan: ",scan);
+    return this.http.post<Scan>(this.apiUrl+"/scan/visitScan", scan);
+  }
+
+  public alertScan(scan : Scan) {
+    console.log("alertScan: ",scan);
+    return this.http.post<Scan>(this.apiUrl+"/scan/alertScan", scan);
   }
 }
