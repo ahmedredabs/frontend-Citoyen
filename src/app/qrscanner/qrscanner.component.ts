@@ -37,7 +37,7 @@ export class QrscannerComponent implements OnInit {
 
   public onCodeResult(resultString: string) {
     console.log(resultString);
-    this.qrcode.id = "1"; //TEST TO DO
+    this.qrcode.id = resultString.split('\n')[0];
     console.log(this.qrcode);
     this.scan.qrCode = this.qrcode;
     this.scannerEnabled = false;
