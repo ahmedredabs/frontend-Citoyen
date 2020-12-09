@@ -1,9 +1,15 @@
-<div>
-  <form class="form-group" (ngSubmit)="onSubmit()">
-    <p>Name (optional):</p>
-    <input type="text" name="name" value="" [(ngModel)]="citizen.name">
+<div class="card my-5">
+  <h1 class="card-title text-center">Welcome to BlockCovid!</h1>
+  <div class="card-body">
+    <i>In the interest of staying anonymous, entering your name is optional. Click the button to register yourself within the application and stop worrying about catching COVID.</i>
     <br>
     <br>
-    <input type="submit" name="reg-button" value="Register">
-  </form>
+    <form class="form-group" (ngSubmit)="onSubmit()">
+      <p>Name (optional):</p>
+      <input type="text" name="name" value="" [(ngModel)]="citizen.name">
+      <br>
+      <br>
+      <input type="submit" name="reg-button" value="Register" class="btn btn-info">
+    </form>
+  </div>
 </div>

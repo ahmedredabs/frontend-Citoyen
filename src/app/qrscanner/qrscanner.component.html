@@ -1,10 +1,14 @@
-<p>qrscanner works!</p>
-<div class="row">
-    <div class="col-12 col-lg-6">
-        <zxing-scanner [formats]="allowedFormats" (scanSuccess)="onCodeResult($event)" *ngIf="scannerEnabled">
-
-        </zxing-scanner>
-        <button (click)="enableScanner()" *ngIf="!scannerEnabled" type="button" class="btn btn-success">Scanner un autre QrCode
+<div class="card my-5">
+    <div *ngIf="scannerEnabled">
+        <h1 class="card-title text-center">Scan your Qrcode</h1>
+        <div class="card-body">
+            <br>
+            <zxing-scanner [formats]="allowedFormats" (scanSuccess)="onCodeResult($event)" >
+            </zxing-scanner>
+        </div>
+    </div>
+    <div *ngIf="!scannerEnabled">
+        <button (click)="enableScanner()" type="button" class="btn btn-info">Scan an other Qrcode
         </button>
     </div>
 </div>

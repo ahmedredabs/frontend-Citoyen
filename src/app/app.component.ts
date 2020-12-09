@@ -11,7 +11,7 @@ import {Citizen} from '../model/citizen';
 
 // Plan: Have the QR scanner and the authentification UC all in one screen. QR scanner is a separate component.
 export class AppComponent implements OnInit {
-  title = 'app-citoyen';
+  title = 'BlockCovid';
   citizen : Citizen = new Citizen();
 
   constructor(private service : ApiService) {
