@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import {Citizen} from '../model/citizen';
+import { AngularFireMessaging } from '@angular/fire/messaging';
 
 
 @Component({
@@ -14,7 +15,20 @@ export class AppComponent implements OnInit {
   title = 'BlockCovid';
   citizen : Citizen = new Citizen();
 
-  constructor(private service : ApiService) {
+  constructor(private service : ApiService, private afMessaging: AngularFireMessaging) {
+  }
+
+  listen() {
+    this.afMessaging.messages
+      .subscribe((message) => { console.log(message); });
+  }
+
+  requestPermission() {
+    this.afMessaging.requestToken
+      .subscribe(
+        (token) => { console.log('Permission granted! Save to the server!', token); },
+        (error) => { console.error(error); },  
+      );
   }
 
   ngOnInit() {

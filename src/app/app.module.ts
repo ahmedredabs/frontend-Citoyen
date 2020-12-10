@@ -14,6 +14,16 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
+var firebaseConfig = {
+  apiKey: "AIzaSyBM3rPio9nGwkn939oHmVfwc_bT3xNjq5Q",
+  authDomain: "notifpfe.firebaseapp.com",
+  projectId: "notifpfe",
+  storageBucket: "notifpfe.appspot.com",
+  messagingSenderId: "989566188518",
+  appId: "1:989566188518:web:2a7fa820a4d43c48613427"
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +32,8 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireMessagingModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
