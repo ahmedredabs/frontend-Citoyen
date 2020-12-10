@@ -30,6 +30,7 @@ export class QrscannerComponent implements OnInit {
     this.qrcode = new Qrcode();
     this.physician= new Phyisician();
     this.location= new Location();
+    this.citizen = new Citizen();
     this.database.getCitizen()
     .then((data : Citizen[]) => {
       console.log(data[0]);
