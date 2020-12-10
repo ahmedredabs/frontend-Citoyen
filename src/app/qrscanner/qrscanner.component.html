@@ -3,7 +3,7 @@
         <h1 class="card-title text-center">Scan your Qrcode</h1>
         <div class="card-body">
             <br>
-            <zxing-scanner [formats]="allowedFormats" (scanSuccess)="onCodeResult($event)" >
+            <zxing-scanner (scanSuccess)="onCodeResult($event)" >
             </zxing-scanner>
         </div>
     </div>

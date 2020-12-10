@@ -11,6 +11,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import {LocaldatabaseService} from 'src/services/localdatabase.service';
 import { QrscannerComponent } from './qrscanner/qrscanner.component';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 @NgModule({
   declarations: [

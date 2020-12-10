@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Scan } from 'src/model/scan';
-import { BarcodeFormat } from '@zxing/library';
 import { ApiService } from 'src/services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Qrcode } from 'src/model/qrcode';
@@ -20,7 +19,6 @@ export class QrscannerComponent implements OnInit {
   qrcode: Qrcode;
   physician: Phyisician;
   location: Location;
-  allowedFormats = [ BarcodeFormat.QR_CODE ];
   scannerEnabled = true;
 
   constructor(private route: ActivatedRoute,
