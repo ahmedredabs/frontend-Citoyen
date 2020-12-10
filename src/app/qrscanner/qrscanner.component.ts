@@ -15,6 +15,7 @@ import { Location } from 'src/model/location';
 })
 export class QrscannerComponent implements OnInit {
 
+  citizen : Citizen;
   scan : Scan;
   qrcode: Qrcode;
   physician: Phyisician;
@@ -24,16 +25,19 @@ export class QrscannerComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private apiService : ApiService,
-    private database : LocaldatabaseService) { 
-    this.scan = new Scan();    
+    private database : LocaldatabaseService) {
+    this.scan = new Scan();
     this.qrcode = new Qrcode();
     this.physician= new Phyisician();
     this.location= new Location();
     this.database.getCitizen()
     .then((data : Citizen[]) => {
       console.log(data[0]);
-      this.scan.citizen = data[0];
+      this.citizen = data[0];
     });
+    console.log('citizen is ',this.citizen);
+
+
   }
 
   ngOnInit(): void {
@@ -55,6 +59,7 @@ export class QrscannerComponent implements OnInit {
 
     this.scan.qrCode = this.qrcode;
     this.scannerEnabled = false;
+    this.scan.citizen.id = this.citizen.id;
     if(isVisitScan){
       this.apiService.visitScan(this.scan).subscribe();
     }else{
